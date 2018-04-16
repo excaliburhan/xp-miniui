@@ -2,7 +2,7 @@
 
 基于mpvue的小程序组件库
 
-![xp-mnui](https://ws1.sinaimg.cn/large/006tKfTcgy1fm2gtok88bg30j40agjx7.gif)
+![xp-miniui](https://ws4.sinaimg.cn/large/006tNc79gy1fqel9fd0qyj30e80e8gmb.jpg)
 
 ### 使用
 
