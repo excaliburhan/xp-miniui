@@ -1,0 +1,12 @@
+{
+  "name": "@miniui/list",
+  "version": "1.0.0",
+  "description": "List 列表",
+  "main": "index.vue",
+  "repository": "git@github.com:excaliburhan/xp-miniui.git",
+  "author": "xiaoping <edwardhjp@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

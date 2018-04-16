@@ -1,0 +1,12 @@
+{
+  "name": "xp-miniui",
+  "version": "1.0.0",
+  "description": "基于mpvue的小程序组件库",
+  "main": "index.js",
+  "repository": "git@github.com:excaliburhan/xp-miniui.git",
+  "author": "xiaoping <edwardhjp@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^2.8.0"
+  }
+}

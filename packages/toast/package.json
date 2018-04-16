@@ -1,0 +1,12 @@
+{
+  "name": "@miniui/toast",
+  "version": "1.0.0",
+  "description": "Toast 轻提示",
+  "main": "index.wpy",
+  "repository": "git@github.com:excaliburhan/xp-miniui.git",
+  "author": "xiaoping <edwardhjp@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
