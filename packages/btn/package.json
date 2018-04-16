@@ -1,6 +1,6 @@
 {
   "name": "@miniui/btn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Btn 按钮",
   "main": "index.vue",
   "repository": "git@github.com:excaliburhan/xp-miniui.git",

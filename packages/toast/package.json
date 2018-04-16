@@ -1,6 +1,6 @@
 {
   "name": "@miniui/toast",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Toast 轻提示",
   "main": "index.wpy",
   "repository": "git@github.com:excaliburhan/xp-miniui.git",
