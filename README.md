@@ -1,8 +1,9 @@
+
+<p align="center"><img width="100" src="https://ws4.sinaimg.cn/large/006tNc79gy1fqel9fd0qyj30e80e8gmb.jpg" alt="xp-miniui logo"></p>
+
 ## xp-miniui
 
 基于mpvue的小程序组件库
-
-<p align="center"><img width="100" src="https://ws4.sinaimg.cn/large/006tNc79gy1fqel9fd0qyj30e80e8gmb.jpg" alt="xp-miniui logo"></p>
 
 ### 使用
 
