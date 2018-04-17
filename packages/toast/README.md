@@ -38,6 +38,14 @@ classname
 
 显示的文字
 
+### icon[String]
+
+图标，目前支持success、loading、warn
+
+### image[String]
+
+自定义图标url，优先级比icon低
+
 ### duration[Number]
 
 持续时间，默认1500ms

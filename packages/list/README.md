@@ -13,7 +13,6 @@
 ### 引入组件
 
 ```js
-// index.vue
 <template>
   <list></list>
 </template>

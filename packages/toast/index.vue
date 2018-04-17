@@ -1,9 +1,15 @@
 <template>
   <div class="mnui-toast animated" :class="computedCls" v-show="display">
     <div class="mnui-toast-mask">
-        <div class="mnui-toast-wrap" :class="className">
-          <div class="mnui-toast-text">{{title}}</div>
+      <div class="mnui-toast-wrap" :class="computedWrapCls">
+        <div class="mnui-toast-icon" :class="computedIconCls" v-if="icon">
+          <img :src="computedIconUrl" alt="">
         </div>
+        <div class="mnui-toast-image" :class="computedIconCls" v-if="!icon && image">
+          <img :src="image" alt="">
+        </div>
+        <div class="mnui-toast-text">{{title}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +56,29 @@ export default {
       const classes = []
       if (this.show) classes.push('is-show')
       return classes.join(' ')
+    },
+    computedWrapCls() {
+      const classes = []
+      if (this.className) classes.push(this.className)
+      if (this.icon || this.image) classes.push('is-icon')
+      return classes.join(' ')
+    },
+    computedIconCls() {
+      if (this.icon) {
+        return 'is-' + this.icon
+      }
+      if (this.image) {
+        return 'is-image'
+      }
+      return ''
+    },
+    computedIconUrl() {
+      let suffix = 'png'
+      if (this.icon === 'loading') suffix = 'svg'
+      if (this.icon) {
+        return `https://static.excaliburhan.com/mnui/mnui-${this.icon}.${suffix}`
+      }
+      return ''
     }
   },
   watch: {
@@ -71,11 +100,14 @@ export default {
       if (this.syncTimer) {
         clearTimeout(this.syncTimer)
       }
-      if (v) {
-        this.syncTimer = setTimeout(() => {
-          this.show = false
-          this.$emit('update:visible', false)
-        }, this.duration)
+      // duration为0表示不主动消失
+      if (this.duration !== 0) {
+        if (v) {
+          this.syncTimer = setTimeout(() => {
+            this.show = false
+            this.$emit('update:visible', false)
+          }, this.duration)
+        }
       }
     }
   },
@@ -87,6 +119,14 @@ export default {
 </script>
 
 <style scoped>
+@keyframes mnuiLoading {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
 .animated {
   transition: opacity 0.4s;
 }
@@ -122,6 +162,7 @@ export default {
   max-width: 60%;
   min-height: 60px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 15px 20px;
@@ -129,5 +170,38 @@ export default {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
+}
+.mnui-toast-wrap.is-icon {
+  min-width: 240px;
+  min-height: 240px;
+  width: 240px;
+}
+.mnui-toast-text {
+  text-align: center;
+}
+.mnui-toast-icon,
+.mnui-toast-image {
+  margin-bottom: 32px;
+}
+.mnui-toast-icon img {
+  width: 100%;
+  height: 100%;
+}
+.mnui-toast-image img {
+  width: 80px;
+  height: 80px;
+}
+.mnui-toast-icon.is-success {
+  width: 99px;
+  height: 71px;
+}
+.mnui-toast-icon.is-loading {
+  width: 76px;
+  height: 76px;
+  animation: mnuiLoading 1s steps(12, end) infinite;
+}
+.mnui-toast-icon.is-warn {
+  width: 14px;
+  height: 86px;
 }
 </style>

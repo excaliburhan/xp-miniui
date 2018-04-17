@@ -62,11 +62,14 @@ export default {
       if (this.syncTimer) {
         clearTimeout(this.syncTimer)
       }
-      if (v) {
-        this.syncTimer = setTimeout(() => {
-          this.show = false
-          this.$emit('update:visible', false)
-        }, this.duration)
+      // duration为0表示不主动消失
+      if (this.duration !== 0) {
+        if (v) {
+          this.syncTimer = setTimeout(() => {
+            this.show = false
+            this.$emit('update:visible', false)
+          }, this.duration)
+        }
       }
     }
   },
@@ -116,5 +119,8 @@ export default {
   font-size: 30px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.7);
+}
+.mnui-toptips-text {
+  text-align: center;
 }
 </style>
