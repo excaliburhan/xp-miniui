@@ -1,6 +1,6 @@
 {
   "name": "@miniui/toptips",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Toptips 顶部提示",
   "main": "index.wpy",
   "repository": "git@github.com:excaliburhan/xp-miniui.git",
